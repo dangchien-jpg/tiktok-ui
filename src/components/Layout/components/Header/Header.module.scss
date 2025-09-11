@@ -82,6 +82,14 @@
         background-color: rgba(22, 24, 35, 0.06);
     }
 }
+
+// Actions
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
 .more-btn {
     font-size: 2rem;
     margin-left: 28px;
@@ -89,24 +97,18 @@
     padding: 4px 8px;
     cursor: pointer;
 }
-
-// Menu
-
-// .actions {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-// .upload {
-// }
-// .actions-btn {
-//     background-color: var(--primary-color);
-//     color: var(--white-color);
-//     padding: 12px 26px;
-//     font-size: 1.8rem;
-//     font-weight: 500;
-//     border-radius: 4px;
-//     margin: 0 16px;
-// }
-// .show {
-// }
+.action-btn {
+    color: #161823;
+    font-size: 2rem;
+    background-color: transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+}
