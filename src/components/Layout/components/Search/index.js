@@ -30,6 +30,13 @@ function Search() {
         ref.current.focus();
     };
 
+    const handleChange = (e) => {
+        const inputValue = e.target.value;
+        if (!inputValue.startsWith(' ') && inputValue.trim()) {
+            setSearchValue(inputValue);
+        }
+    };
+
     useEffect(() => {
         if (!debounced.trim()) {
             setSearchResult([]);
@@ -49,7 +56,8 @@ function Search() {
     };
     return (
         <HeadlessTippy
-            interactive={true}
+            interactive
+            appendTo={() => document.body}
             visible={showResult && searchResult.length > 0}
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
@@ -70,7 +78,7 @@ function Search() {
                     className={cx('input')}
                     placeholder="Search accounts and videos"
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
 
@@ -83,7 +91,7 @@ function Search() {
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                 <span className={cx('seperate')}></span>
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>
