@@ -8,7 +8,7 @@ import { SearchIcon } from '~/components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useDebounce } from '~/hooks';
-import * as searchSevice from '~/apiServices/searchService';
+import * as searchSevice from '~/services/searchService';
 const cx = classNames.bind(styles);
 
 function Search() {
